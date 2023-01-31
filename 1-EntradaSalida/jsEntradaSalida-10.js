@@ -1,4 +1,4 @@
-/*
+/*Agustin Di leone
 Debemos lograr tomar el importe por ID.
 Transformarlo a entero (parseInt), luego
 mostrar el importe con un Descuento del 25 %
