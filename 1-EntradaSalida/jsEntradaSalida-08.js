@@ -3,7 +3,7 @@ Debemos lograr tomar Los numeros por ID ,
 transformarlos a enteros (parseInt),realizar la operación correcta y 
 mostrar el resto entre el dividendo y el divisor.
 ej.: "El resto es 0 ."*/
-function SacarResto()
+function SacarResto()/*
 {
 	let datoDividendo;
 	let datoDivisor;
@@ -22,8 +22,27 @@ function SacarResto()
 
 	alert(mensaje);
 
-	/*pueden obviarese las variables numDividiendo y numDivisor
-	y conservar datoDivisor y datoDividiendo ya que al hacer parseInt
-	se cambia  directamente su valor*/
+}
+*/
+{
+	let datoUno;
+	let datoDos;
+	let resultadoSuma;
+	let resultadoPromedio;
+	let resultadoModulo
+
+	datoUno = document.getElementById("txtIdNumeroDividendo").value;
+	datoDos = document.getElementById("txtIdNumeroDivisor").value;
 	
+	datoUno = parseInt(datoUno);
+	datoDos = parseInt(datoDos);
+
+	resultadoSuma = datoUno+datoDos;
+	resultadoPromedio = resultadoSuma/2;
+	resultadoModulo = datoUno % datoDos;
+
+	alert("La suma de los numeros da "+resultadoSuma);
+	alert("El promedio de los numeros es " +resultadoPromedio);
+	alert('El modulo de los numeros es ' +resultadoModulo)
+
 }
