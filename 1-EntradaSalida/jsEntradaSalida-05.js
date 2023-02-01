@@ -9,8 +9,8 @@ function mostrar()
 
 	nombrePersona = document.getElementById("txtIdNombre").value;
 	edadPersona = document.getElementById("txtIdEdad").value;
-	
 	mensaje = "Usted se llama " + nombrePersona + " y tiene " + edadPersona + " años";
+	
 	alert(mensaje);
 }
 
