@@ -21,4 +21,9 @@ function SacarResto()
 	mensaje = 'El resto en ' + resultado
 
 	alert(mensaje);
+
+	/*pueden obviarese las variables numDividiendo y numDivisor
+	y conservar datoDivisor y datoDividiendo ya que al hacer parseInt
+	se cambia  directamente su valor*/
+	
 }
