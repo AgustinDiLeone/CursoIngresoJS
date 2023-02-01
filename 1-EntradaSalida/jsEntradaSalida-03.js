@@ -31,7 +31,7 @@ Pueden utilizar el html del ejercicio 3 para resolverlo. */
 	descripcion = prompt("Describa el producto");
 	precio = document.getElementById("txtIdNombre").value; 
 	precio = parseInt(precio);
-	precioFinal= (precio+2);
+	precioFinal= precio*1.30;
 
 	alert (descripcion+ " y cuesta " + precioFinal);
 
