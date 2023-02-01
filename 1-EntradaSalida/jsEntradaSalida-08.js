@@ -24,7 +24,14 @@ function SacarResto()/*
 
 }
 */
-{
+{   /*
+	Ejercicio 8.bis: Ingresar dos numeros por id
+	Se pide:
+	mostrar por alert:
+	a) La suma de los dos numeros
+	b) El promedio de los numeros
+	c) El modulo de los numeros (el primero en modulo del segundo)*/
+
 	let datoUno;
 	let datoDos;
 	let resultadoSuma;
