@@ -17,8 +17,8 @@ function SacarResto()
 
 	numDividendo = parseInt(datoDividendo);
 	numDivisor = parseInt(datoDivisor);
-	resultado = numDividendo % numDivisor
-	mensaje = 'El resto en ' + resultado
+	resultado = numDividendo % numDivisor;
+	mensaje = 'El resto en ' + resultado;
 
 	alert(mensaje);
 
