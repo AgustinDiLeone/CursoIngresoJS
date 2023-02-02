@@ -1,6 +1,10 @@
+//Agustin Di Leone
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
 
-}//FIN DE LA FUNCIÓN
+	Edad = document.getElementById().value;
+	
+	alert("niña bonita");
+
+}
