@@ -18,6 +18,11 @@ function Sumar ()
     precioUno = parseInt(precioUno)
     precioDos = parseInt(precioDos)
     precioTres = parseInt(precioTres)
+
+    /*esto se puede unificar haciendo solo: asignando y parseando a la vez
+    precioUno = parseInt (document.getElementById("txtIdPrecioUno").value);
+    */
+   
     mensaje = 'La suma de los productos da ' + (precioUno + precioDos + precioTres)
 
     alert(mensaje)
