@@ -14,8 +14,8 @@ function Rectangulo ()
 
     alambreLargo = document.getElementById("txtIdLargo").value;
     alambreAncho = document.getElementById("txtIdAncho").value;
-    alambreLargo = parseInt(alambreLargo);
-    alambreAncho = parseInt(alambreAncho);
+    alambreLargo = parseFloat(alambreLargo);
+    alambreAncho = parseFloat(alambreAncho);
     resultado = ((alambreLargo*2)+(alambreAncho*2))*3;
 
     console.log("Se necesitara " +resultado+ " metros de alambre ");
@@ -29,7 +29,7 @@ function Circulo ()
     let mensaje;
 
     alambreRadio = document.getElementById("txtIdRadio").value;
-    alambreRadio = parseInt(alambreRadio);
+    alambreRadio = parseFloat(alambreRadio);
     resultado = 3.14*2*alambreRadio;
 
     console.log("Se necesitaran " + resultado + " metros de alambre");
@@ -45,8 +45,8 @@ function Materiales ()
 
     terrenoLargo = document.getElementById("txtIdLargo").value;
     terrenoAncho = document.getElementById("txtIdAncho").value;
-    terrenoLargo = parseInt(terrenoLargo);
-    terrenoAncho = parseInt(terrenoAncho);
+    terrenoLargo = parseFloat(terrenoLargo);
+    terrenoAncho = parseFloat(terrenoAncho);
     superficie = terrenoAncho*terrenoLargo;
     resultadoCemento = superficie*2;
     resultadoCal = superficie*3;

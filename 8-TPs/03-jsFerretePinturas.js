@@ -10,7 +10,7 @@ function FahrenheitCentigrados ()
     let mensaje
 
     temperatura = document.getElementById("txtIdTemperatura").value;
-    temperatura = parseInt(temperatura)
+    temperatura = parseFloat(temperatura)
     resultado = (temperatura-32)*(5/9)
     mensaje= temperatura+ " Fahrenheit son "+resultado+ (" Centígrados")
 
@@ -24,7 +24,7 @@ function CentigradosFahrenheit ()
     let mensaje
 
     temperatura = document.getElementById("txtIdTemperatura").value;
-    temperatura = parseInt(temperatura)
+    temperatura = parseFloat(temperatura)
     resultado = (temperatura*1.8)+32
     mensaje= temperatura+ " Centígrados son "+resultado+ (" Fahrenheit")
 
