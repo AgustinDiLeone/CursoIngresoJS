@@ -18,7 +18,7 @@ function Rectangulo ()
     alambreAncho = parseInt(alambreAncho);
     resultado = ((alambreLargo*2)+(alambreAncho*2))*3;
 
-    alert("Se necesitara " +resultado+ " metros de alambre ");
+    console.log("Se necesitara " +resultado+ " metros de alambre ");
    
 }
 
@@ -32,7 +32,7 @@ function Circulo ()
     alambreRadio = parseInt(alambreRadio);
     resultado = 3.14*2*alambreRadio;
 
-    alert("Se necesitaran " + resultado + " metros de alambre");
+    console.log("Se necesitaran " + resultado + " metros de alambre");
 }
 function Materiales () 
 {
@@ -51,6 +51,6 @@ function Materiales ()
     resultadoCemento = superficie*2;
     resultadoCal = superficie*3;
 
-    alert("Se necesitaran " +resultadoCemento+ " bolsas de cemento y " +resultadoCal +" bolsas de cal");
+    console.log("Se necesitaran " +resultadoCemento+ " bolsas de cemento y " +resultadoCal +" bolsas de cal");
 	
 }

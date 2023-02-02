@@ -15,18 +15,19 @@ function Sumar ()
     precioDos = document.getElementById("txtIdPrecioDos").value;
     precioTres = document.getElementById("txtIdPrecioTres").value;
 	
-    precioUno = parseInt(precioUno)
-    precioDos = parseInt(precioDos)
-    precioTres = parseInt(precioTres)
+    precioUno = parseInt(precioUno);
+    precioDos = parseInt(precioDos);
+    precioTres = parseInt(precioTres);
 
     /*esto se puede unificar haciendo solo: asignando y parseando a la vez
     precioUno = parseInt (document.getElementById("txtIdPrecioUno").value);
     */
    
-    mensaje = 'La suma de los productos da ' + (precioUno + precioDos + precioTres)
+    mensaje = 'La suma de los productos da ' + (precioUno + precioDos + precioTres);
 
-    alert(mensaje)
-	
+    //alert(mensaje)
+    //A partir de ahora se cambia alert por console.log
+	console.log (mensaje);
 }
 function Promedio () 
 {
@@ -40,14 +41,14 @@ function Promedio ()
     precioDos = document.getElementById("txtIdPrecioDos").value;
     precioTres = document.getElementById("txtIdPrecioTres").value;
 	
-    precioUno = parseInt(precioUno)
-    precioDos = parseInt(precioDos)
-    precioTres = parseInt(precioTres)
-    resultado = (precioUno + precioDos + precioTres)/3 
-    mensaje = 'El promedio de los productos es ' + resultado
+    precioUno = parseInt(precioUno);
+    precioDos = parseInt(precioDos);
+    precioTres = parseInt(precioTres);
+    resultado = (precioUno + precioDos + precioTres)/3 ;
+    mensaje = 'El promedio de los productos es ' + resultado;
 
-    alert(mensaje)
-		
+    //alert(mensaje);
+	console.log (mensaje);	
 }
 function PrecioFinal () 
 {
@@ -61,13 +62,13 @@ function PrecioFinal ()
     precioDos = document.getElementById("txtIdPrecioDos").value;
     precioTres = document.getElementById("txtIdPrecioTres").value;
 	
-    precioUno = parseInt(precioUno)
-    precioDos = parseInt(precioDos)
-    precioTres = parseInt(precioTres)
-    resultado = (precioUno + precioDos + precioTres)*1.21
-    mensaje = 'El precio final es ' + resultado
+    precioUno = parseInt(precioUno);
+    precioDos = parseInt(precioDos);
+    precioTres = parseInt(precioTres);
+    resultado = (precioUno + precioDos + precioTres)*1.21;
+    mensaje = 'El precio final es ' + resultado;
 
-    alert(mensaje)
-
+    //alert(mensaje);
+    console.log (mensaje);
 
 }

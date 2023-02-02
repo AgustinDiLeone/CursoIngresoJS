@@ -14,7 +14,7 @@ function FahrenheitCentigrados ()
     resultado = (temperatura-32)*(5/9)
     mensaje= temperatura+ " Fahrenheit son "+resultado+ (" Centígrados")
 
-    alert(mensaje)
+    console.log (mensaje);
 }
 
 function CentigradosFahrenheit () 
@@ -28,6 +28,6 @@ function CentigradosFahrenheit ()
     resultado = (temperatura*1.8)+32
     mensaje= temperatura+ " Centígrados son "+resultado+ (" Fahrenheit")
 
-    alert(mensaje)
+    console.log (mensaje);
 	
 }
