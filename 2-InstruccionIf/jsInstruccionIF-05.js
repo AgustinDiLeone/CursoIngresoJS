@@ -1,6 +1,14 @@
+//Agustin Di Leone
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	let edad; 
+	let mensaje;
+	
+	edad = parseInt(document.getElementById("txtIdEdad").value);
 
-}//FIN DE LA FUNCIÓN
+	if (edad < 13 || edad > 17){
+		mensaje = "No sos adolescente"
+		alert(mensaje);
+	}
+}
