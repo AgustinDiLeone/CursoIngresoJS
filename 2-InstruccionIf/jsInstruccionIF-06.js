@@ -11,10 +11,10 @@ function mostrar()
 	{
 		mensaje = "Sos mayor de edad";
 	} else{
-		if (edad >= 13 && edad <= 17){
+		if (edad >= 13 ){
 
 		mensaje = "Sos adolescente";
-		
+
 		}else{
 	
 		mensaje = "Sos un niño";
