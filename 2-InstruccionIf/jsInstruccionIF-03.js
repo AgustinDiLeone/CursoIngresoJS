@@ -1,6 +1,8 @@
+//Agustin Di Leone
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN
