@@ -9,10 +9,7 @@ function mostrar()
 
 	if (edad >= 18){
 
-		mensaje = "Sos mayor de edad"
-	}else {
-
-		mensaje = "sos menor de edad"
+		mensaje = "Sos mayor de edad";
 	}
 
 	alert(mensaje);

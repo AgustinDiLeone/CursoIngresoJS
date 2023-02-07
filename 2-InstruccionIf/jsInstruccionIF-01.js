@@ -11,9 +11,8 @@ function mostrar()
 
 	mensaje = "niña bonita";
 	
-	}else {
-		mensaje = "no ha ingresado un 15";
 	}
+	
 	alert(mensaje);
 }
 
