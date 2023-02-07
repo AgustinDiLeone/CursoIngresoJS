@@ -17,9 +17,9 @@ function Rectangulo ()
     alambreLargo = parseFloat(alambreLargo);
     alambreAncho = parseFloat(alambreAncho);
     resultado = ((alambreLargo*2)+(alambreAncho*2))*3;
+    mensaje =  "Se necesitara " +resultado+ " metros de alambre ";
 
-    console.log("Se necesitara " +resultado+ " metros de alambre ");
-   
+   console.log(mensaje);
 }
 
 function Circulo () 
@@ -31,8 +31,9 @@ function Circulo ()
     alambreRadio = document.getElementById("txtIdRadio").value;
     alambreRadio = parseFloat(alambreRadio);
     resultado = 3.14*2*alambreRadio;
+    mensaje = "Se necesitaran " + resultado + " metros de alambre";
 
-    console.log("Se necesitaran " + resultado + " metros de alambre");
+    console.log(mensaje)
 }
 function Materiales () 
 {
@@ -50,7 +51,7 @@ function Materiales ()
     superficie = terrenoAncho*terrenoLargo;
     resultadoCemento = superficie*2;
     resultadoCal = superficie*3;
+    mensaje = "Se necesitaran " +resultadoCemento+ " bolsas de cemento y " +resultadoCal +" bolsas de cal";
 
-    console.log("Se necesitaran " +resultadoCemento+ " bolsas de cemento y " +resultadoCal +" bolsas de cal");
-	
+	console.log(mensaje)
 }
