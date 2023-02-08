@@ -19,6 +19,6 @@ function mostrar()
 
 	}
 	
-	alert(mensaje + " " + x);
+	alert(x + " " + mensaje);
 	
 }
