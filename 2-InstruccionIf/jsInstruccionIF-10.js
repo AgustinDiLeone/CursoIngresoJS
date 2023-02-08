@@ -3,7 +3,7 @@ function mostrar()
 	let x;
 	let mensaje;
 
-	x = parseInt (Math.floor(Math.random()*10)+1);
+	x = Math.floor(Math.random()*10)+1;
 	if (x >= 9){
 
 		mensaje = "EXCELENTE"
