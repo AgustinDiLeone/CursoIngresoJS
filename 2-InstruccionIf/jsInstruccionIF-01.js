@@ -63,9 +63,28 @@ alert(mensaje);
 	Obesidad I 27-29.9
 	Obesidad II 30-34.9
 	Obesidad III >40
-	*/
+    */
+	let peso;
+	let estatura;
+	let IMC;
+	peso = parseFloat(document.getElementById("txtIdEdad").value);
+	estatura = parseFloat(prompt("¿cuanto medis?"));
 
+	IMC = peso / (estatura*estatura);
 
+	if (IMC <= 18.5){
+		mensaje = "Bajo peso";
+	}else if (IMC <= 24.9){
+		mensaje = "Peso normal";
+	}else if (IMC <= 26.9){
+		mensaje = "Preobesidad";
+	}else if (IMC <= 29.9){
+		mensaje = "Obesidad I";
+	}else if (IMC <= 34.9){
+		mensaje = "Obesidad II";
+	}else {
+		mensaje = "Obesidad III";
+	}
 
-	
+	alert(mensaje);
 }
