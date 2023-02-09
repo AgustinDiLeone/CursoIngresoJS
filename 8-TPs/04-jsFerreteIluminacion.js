@@ -26,46 +26,43 @@ function CalcularPrecio ()
     let mensaje;
     let ingresosBrutos;
     let mensajeIngresosBrutos;
-
+    let descuento;
 
     cantidadLamparitas = parseInt(document.getElementById("txtIdCantidad").value);
     marca = document.getElementById("Marca").value;
     precio = 35;
     precioBruto = cantidadLamparitas * precio; 
-
-    if (cantidadLamparitas >= 6){
-        precioFinal = precioBruto-(precioBruto*50)/100;
-        mensaje = "El precio final es de " + precioFinal;
-    }else if (cantidadLamparitas == 5 && marca == "ArgentinaLuz"){
-        precioFinal = precioBruto-(precioBruto*40)/100;
-        mensaje = "El precio final es de " + precioFinal;
     
-    }else if (cantidadLamparitas == 5 && marca != "ArgentinaLuz"){
-        precioFinal = precioBruto-(precioBruto*30)/100;
-        mensaje = "El precio final es de " + precioFinal;
-
+    if (cantidadLamparitas >= 6){
+        descuento = 50;
+       
+    }else if (cantidadLamparitas == 5 && marca == "ArgentinaLuz"){
+        descuento = 40;
+           
+    }else if (cantidadLamparitas == 5){
+        descuento = 30;
+       
     }else if (cantidadLamparitas == 4 && (marca == "ArgentinaLuz" || marca == "FelipeLamparas")){
-        precioFinal = precioBruto-(precioBruto*25)/100;
-        mensaje = "El precio final es de " + precioFinal;
-
+        descuento = 25;
+       
     }else if (cantidadLamparitas == 4 ){
-        precioFinal = precioBruto-(precioBruto*20)/100;
-        mensaje = "El precio final es de " + precioFinal;
-
+        descuento = 20;
+        
     }else if (cantidadLamparitas == 3 && marca == "ArgentinaLuz"){
-        precioFinal = precioBruto-(precioBruto*15)/100;
-        mensaje = "El precio final es de " + precioFinal;
-
+        descuento = 15;
+        
     }else if (cantidadLamparitas == 3 && marca == "FelipeLamparas"){
-        precioFinal = precioBruto-(precioBruto*10)/100;
-        mensaje = "El precio final es de " + precioFinal;
-
+        descuento = 10;
+        
     }else if (cantidadLamparitas == 3) {
-        precioFinal = precioBruto-(precioBruto*5)/100;
-        mensaje = "El precio final es de " + precioFinal;
+        descuento = 5;
+        
+    }else {
+        descuento = 0
     }
     
-    
+    precioFinal = precioBruto-(precioBruto*descuento)/100;
+    mensaje = "El precio final es de " + precioFinal;
     document.getElementById("txtIdprecioDescuento").value = mensaje;
 
     if (precioFinal >= 120){
