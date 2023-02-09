@@ -27,6 +27,7 @@ function CalcularPrecio ()
     let ingresosBrutos;
     let mensajeIngresosBrutos;
     let descuento;
+    let IIBB
 
     cantidadLamparitas = parseInt(document.getElementById("txtIdCantidad").value);
     marca = document.getElementById("Marca").value;
@@ -36,27 +37,26 @@ function CalcularPrecio ()
     if (cantidadLamparitas >= 6){
         descuento = 50;
        
-    }else if (cantidadLamparitas == 5 && marca == "ArgentinaLuz"){
-        descuento = 40;
-           
     }else if (cantidadLamparitas == 5){
-        descuento = 30;
-       
-    }else if (cantidadLamparitas == 4 && (marca == "ArgentinaLuz" || marca == "FelipeLamparas")){
+        if(marca == "ArgentinaLuz"){
+            descuento = 40;           
+        } else {
+            descuento = 30;
+        }
+    }else if (cantidadLamparitas == 4){
+        if(marca == "ArgentinaLuz" || marca == "FelipeLamparas"){
         descuento = 25;
-       
-    }else if (cantidadLamparitas == 4 ){
+        } else { 
         descuento = 20;
-        
-    }else if (cantidadLamparitas == 3 && marca == "ArgentinaLuz"){
+        }
+    }else if (cantidadLamparitas == 3){ 
+        if(marca == "ArgentinaLuz"){
         descuento = 15;
-        
-    }else if (cantidadLamparitas == 3 && marca == "FelipeLamparas"){
-        descuento = 10;
-        
-    }else if (cantidadLamparitas == 3) {
-        descuento = 5;
-        
+        } else if(marca == "FelipeLamparas"){
+            descuento = 10;
+        } else {
+            descuento = 5;
+        }
     }else {
         descuento = 0
     }
@@ -66,8 +66,8 @@ function CalcularPrecio ()
     document.getElementById("txtIdprecioDescuento").value = mensaje;
 
     if (precioFinal >= 120){
-
-        ingresosBrutos = precioFinal * 10 /100;
+        IIBB = 10
+        ingresosBrutos = precioFinal * IIBB /100;
         mensajeIngresosBrutos = "Usted pago " + ingresosBrutos + " de IIBB.";
         alert(mensajeIngresosBrutos);
     }    
