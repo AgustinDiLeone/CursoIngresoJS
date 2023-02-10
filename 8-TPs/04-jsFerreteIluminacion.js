@@ -16,6 +16,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  JeLuz
  Osram*/
 
+ /*
 function CalcularPrecio () 
 {
     let cantidadLamparitas;
@@ -27,7 +28,7 @@ function CalcularPrecio ()
     let ingresosBrutos;
     let mensajeIngresosBrutos;
     let descuento;
-    let IIBB
+    let IIBB;
 
     cantidadLamparitas = parseInt(document.getElementById("txtIdCantidad").value);
     marca = document.getElementById("Marca").value;
@@ -72,4 +73,210 @@ function CalcularPrecio ()
         alert(mensajeIngresosBrutos);
     }    
  	
+}*/
+/*
+//TP 4 Ferrete iluminancion solo SWITCH (las marcas), IF(cantidad)
+function CalcularPrecio () 
+{
+    let cantidadLamparitas;
+    let marca;
+    let precio;
+    let precioBruto;
+    let precioFinal;
+    let mensaje;
+    let ingresosBrutos;
+    let mensajeIngresosBrutos;
+    let descuento;
+    let IIBB;
+
+    cantidadLamparitas = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+    precio = 35;
+    precioBruto = cantidadLamparitas * precio; 
+    
+    if (cantidadLamparitas >= 6){
+        descuento = 50;
+       
+    }else if (cantidadLamparitas == 5){
+        switch(marca){
+            case"ArgentinaLuz":
+                descuento = 40; 
+                break;          
+            default:
+                descuento = 30;
+        }
+    }else if (cantidadLamparitas == 4){
+        switch(marca){
+            case"ArgentinaLuz":
+            case"FelipeLamparas":
+                descuento = 25;
+                break;
+            default:
+                descuento = 20;
+        }
+    }else if (cantidadLamparitas == 3){ 
+        switch(marca){ 
+            case"ArgentinaLuz":
+                descuento = 15;
+                break;
+            case"FelipeLamparas":
+                descuento = 10;
+                break;
+            default:
+                descuento = 5;
+        }
+    }else {
+        descuento = 0
+    }
+    
+    precioFinal = precioBruto-(precioBruto*descuento)/100;
+    mensaje = "El precio final es de " + precioFinal;
+    document.getElementById("txtIdprecioDescuento").value = mensaje;
+
+    if (precioFinal >= 120){
+        IIBB = 10
+        ingresosBrutos = precioFinal * IIBB /100;
+        mensajeIngresosBrutos = "Usted pago " + ingresosBrutos + " de IIBB.";
+        alert(mensajeIngresosBrutos);
+    }    
+ 	
+}*/
+/*
+//TP 4 Ferrete iluminancion Con switch(cantidad) y if (marca)
+function CalcularPrecio () 
+{
+    let cantidadLamparitas;
+    let marca;
+    let precio;
+    let precioBruto;
+    let precioFinal;
+    let mensaje;
+    let ingresosBrutos;
+    let mensajeIngresosBrutos;
+    let descuento;
+    let IIBB;
+
+    cantidadLamparitas = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+    precio = 35;
+    precioBruto = cantidadLamparitas * precio; 
+    
+    switch(cantidadLamparitas){
+        case 5:     
+            if(marca == "ArgentinaLuz"){
+            descuento = 40;           
+            } else {
+            descuento = 30;
+            }
+            break;
+        case 4:
+            if(marca == "ArgentinaLuz" || marca == "FelipeLamparas"){
+            descuento = 25;
+            } else { 
+            descuento = 20;
+            }
+            break;
+        case 3: 
+            if(marca == "ArgentinaLuz"){
+            descuento = 15;
+            } else if(marca == "FelipeLamparas"){
+                descuento = 10;
+            } else {
+                descuento = 5;
+            }
+            break;
+        case 0:
+        case 1:
+        case 2:
+            descuento = 0
+            break;
+        default:
+            descuento = 50;       
+    }
+
+    precioFinal = precioBruto-(precioBruto*descuento)/100;
+    mensaje = "El precio final es de " + precioFinal;
+    document.getElementById("txtIdprecioDescuento").value = mensaje;
+
+    if (precioFinal >= 120){
+        IIBB = 10
+        ingresosBrutos = precioFinal * IIBB /100;
+        mensajeIngresosBrutos = "Usted pago " + ingresosBrutos + " de IIBB.";
+        alert(mensajeIngresosBrutos);
+    }    
+ 	
+}*/
+//TP 4 Ferrete iluminancion TODO Switch
+function CalcularPrecio () 
+{
+    let cantidadLamparitas;
+    let marca;
+    let precio;
+    let precioBruto;
+    let precioFinal;
+    let mensaje;
+    let ingresosBrutos;
+    let mensajeIngresosBrutos;
+    let descuento;
+    let IIBB;
+
+    cantidadLamparitas = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+    precio = 35;
+    precioBruto = cantidadLamparitas * precio; 
+    
+    switch(cantidadLamparitas){
+        case 5: 
+            switch(marca){
+                case"ArgentinaLuz":
+                    descuento = 40; 
+                    break;          
+                default:
+                    descuento = 30;
+            }
+        break;
+        case 4:
+            switch(marca){
+                case"ArgentinaLuz":
+                case"FelipeLamparas":
+                    descuento = 25;
+                    break;
+                default:
+                    descuento = 20;
+            }
+        break;
+        case 3:
+            switch(marca){ 
+                case"ArgentinaLuz":
+                    descuento = 15;
+                    break;
+                case"FelipeLamparas":
+                    descuento = 10;
+                    break;
+                default:
+                    descuento = 5;
+                    break;
+            }
+        break;
+        case 0:
+        case 1:
+        case 2:
+            descuento = 0
+            break;
+        default:
+            descuento = 50;       
+    }
+    
+    precioFinal = precioBruto-(precioBruto*descuento)/100;
+    mensaje = "El precio final es de " + precioFinal;
+    document.getElementById("txtIdprecioDescuento").value = mensaje;
+
+    if (precioFinal >= 120){
+        IIBB = 10
+        ingresosBrutos = precioFinal * IIBB /100;
+        mensajeIngresosBrutos = "Usted pago " + ingresosBrutos + " de IIBB.";
+        alert(mensajeIngresosBrutos);
+    }    
+ 	
 }
+
