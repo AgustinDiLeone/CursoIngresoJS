@@ -26,7 +26,8 @@ function mostrar()
 				case"Mar del plata":
 					porcentaje = -20;
 					break;
-			}
+			 } 
+			break;
 		case"Verano":
 			switch(destinoIngresado){
 				case"Bariloche":
@@ -40,6 +41,7 @@ function mostrar()
 					porcentaje = 20;
 					break;
 			}
+			break;
 		case"Otoño":
 		case"Primavera":
 			switch(destinoIngresado){
@@ -52,9 +54,9 @@ function mostrar()
 					porcentaje = 0;
 					break;
 			}
+			break;
 	}
 	precioFinal = precio + (precio * porcentaje / 100);
 	mensaje = "El precio final del viaje es de " + precioFinal
 	alert(mensaje);
-
-}//FIN DE LA FUNCIÓN
+}
