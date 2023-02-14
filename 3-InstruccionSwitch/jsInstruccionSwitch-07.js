@@ -9,10 +9,10 @@ function mostrar()
 
 	switch(destinoIngresado){
 		case"Bariloche":
-			mensaje = "Se encuentra al Sur de nuestro pais";
+			mensaje = "Se encuentra al Oeste de nuestro pais";
 			break;
 		case"Cataratas":
-			mensaje = "Se encuentra al Este de nuestro pais";
+			mensaje = "Se encuentra al Norte de nuestro pais";
 			break;
 		case"Mar del plata":
 			mensaje = "Se encuentra al Este de nuestro pais";
@@ -22,7 +22,6 @@ function mostrar()
 			break;
 
 	}
-
 
 	alert(mensaje);
 

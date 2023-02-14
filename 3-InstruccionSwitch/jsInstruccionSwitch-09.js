@@ -9,9 +9,10 @@ function mostrar()
 	let precio;
 	let precioFinal;
 
+	precio = 15000;
+
 	estacionIngresada = document.getElementById("txtIdEstacion").value;
 	destinoIngresado = document.getElementById("txtIdDestino").value;
-	precio = 15000;
 
 	switch(estacionIngresada){
 		case"Invierno":
@@ -56,7 +57,10 @@ function mostrar()
 			}
 			break;
 	}
+
 	precioFinal = precio + (precio * porcentaje / 100);
-	mensaje = "El precio final del viaje es de " + precioFinal
+	mensaje = "El precio final del viaje es de " + precioFinal;
+
 	alert(mensaje);
+
 }
