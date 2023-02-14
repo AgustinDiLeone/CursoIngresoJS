@@ -1,13 +1,17 @@
+//Agustin Di Leone
+
 function mostrar()
 {
-	var contador;
-	var acumulador;
-	var numeroIngresado;
+	let contador;
+	let acumulador;
+	let numeroIngresado;
 
 	contador=0;
 	acumulador=0;
 	
+	while(isNaN(numeroIngresado)||)
 	
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/5;
+	
+	document.getElementById(txtIdSuma).value = 
+	document.getElementById(txtIdPromedio).value = 
 }//FIN DE LA FUNCIÓN
