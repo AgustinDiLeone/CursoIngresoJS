@@ -5,12 +5,11 @@ function mostrar()
 {
 	let sexoIngresado;
 
-	sexoIngresado = prompt("ingrese f ó m .");
+	sexoIngresado = prompt("ingrese 'f' para femenino ó 'm' para masculino .");
 	
-	while(!(sexoIngresado == "f" || sexoIngresado == "m")){
+	while(!(sexoIngresado == "f" || sexoIngresado == "m" || sexoIngresado == "F" || sexoIngresado == "M")){
 
-		alert("Ingresaste un sexo incorrecto");
-		sexoIngresado = prompt("ingrese f ó m .");
+		sexoIngresado = prompt("Error: ingrese 'f' para femenino ó 'm' para masculino .");
 	}
 	
 	mensaje = "Ingresaste el sexo " + sexoIngresado;

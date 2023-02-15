@@ -1,17 +1,30 @@
 //Agustin Di Leone
 
 function mostrar()
-{
-	let contador;
+{	
+	let promedio;
+	let cantidadNumeros;
 	let acumulador;
-	let numeroIngresado;
+	let numero;
 
-	contador=0;
-	acumulador=0;
+	promedio = 0;
+	acumulador = 0
+	cantidadNumeros = 0;
+
+	for(let i = 0; i < 5; i++){
+		numero = parseInt(prompt("Ingrese un numero"));
+		while(isNaN(numero)){
+
+			numero = parseInt(prompt("Erro: Ingrese otro numero"));
+		}
+
+		cantidadNumeros = cantidadNumeros + 1;
+		acumulador = acumulador + numero;	
+	}
 	
-	while(isNaN(numeroIngresado)||)
-	
-	
-	document.getElementById(txtIdSuma).value = 
-	document.getElementById(txtIdPromedio).value = 
+	promedio = acumulador / cantidadNumeros;
+
+	document.getElementById("txtIdSuma").value = acumulador;
+	document.getElementById("txtIdPromedio").value = promedio;
 }//FIN DE LA FUNCIÓN
+

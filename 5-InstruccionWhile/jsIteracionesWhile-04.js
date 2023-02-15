@@ -9,8 +9,7 @@ function mostrar()
 	numeroIngresado = parseFloat(prompt("ingrese un número entre 0 y 9."));
 
 	while(isNaN(numeroIngresado)||numeroIngresado < 0 || numeroIngresado > 9){
-		alert("Error: Ingrese un numero entre 0 y 9 unicamente")
-		numeroIngresado = parseFloat(prompt("ingrese un número entre 0 y 9."));
+		numeroIngresado = parseFloat(prompt("Error: ingrese un número entre 0 y 9."));
 	}
 	
 	mensaje = "Felicitaciones ingresaste el: " + numeroIngresado + " un numero correcto";
