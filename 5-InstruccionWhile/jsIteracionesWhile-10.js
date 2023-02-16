@@ -68,7 +68,7 @@ function mostrar()
 	}//fin del while
 
 	document.write("la suma de negativos es :" + sumaNegativos + "<br>");
-	document.write("la suma de positivos es :" + sumaPositivo + "<br>");
+	document.write("la suma de positivos es :" + sumaPositivos + "<br>");
 	document.write("la cantidad de positivos es :" + contadorPositivos + "<br>");
 	document.write("la cantidad de negativos es :" + contadorNegativos + "<br>");
 	document.write("la cantidad de ceros es :" + contadorCeros + "<br>");
