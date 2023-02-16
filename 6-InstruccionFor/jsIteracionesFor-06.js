@@ -1,7 +1,28 @@
 function mostrar()
 {
-	alert("ok");
+	let contadorPar;
+	let numeroIngresado;
 
+	contadorPar = 0;
 
+	numeroIngresado = parseInt(prompt("Ingresa un numero"));
+		while(isNaN(numeroIngresado)){
+			numeroIngresado = parseInt(prompt("Error: Ingresa un numero"));
 
-}//FIN DE LA FUNCIÓN
+		}
+
+	for(let i = 0; i < numeroIngresado; i++){
+				
+		if(i % 2  == 0){
+
+			console.log("Es un nuemro par: " + i);
+			contadorPar = contadorPar + 1;
+
+		}
+
+	}
+
+	console.log("Hay: " + contadorPar + " numeros pares")
+
+}
+
