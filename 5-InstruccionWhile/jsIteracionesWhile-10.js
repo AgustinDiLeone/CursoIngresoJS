@@ -63,6 +63,14 @@ function mostrar()
 		promedioNegativos =  sumaNegativos / contadorNegativos;
 		diferenciaPositivosNegativos = sumaPositivos - sumaNegativos;
 
+		if(isNaN(promedioNegativos)){
+
+			promedioNegativos = 0;
+		}
+		if(isNaN(promedioPositivos)){
+			promedioPositivos = 0;
+		}
+
 		respuesta = prompt("deseas ingresar otro numero? SI/NO");
 	
 	}//fin del while
