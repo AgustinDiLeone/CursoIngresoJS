@@ -10,9 +10,11 @@ function mostrar()
 	promedio = 0;
 	acumulador = 0
 	cantidadNumeros = 0;
+	i = 0;
 
-	for(let i = 0; i < 5; i++){
+	while(i < 5){
 		numero = parseInt(prompt("Ingrese un numero"));
+		i = i + 1;
 		while(isNaN(numero)){
 
 			numero = parseInt(prompt("Erro: Ingrese otro numero"));
