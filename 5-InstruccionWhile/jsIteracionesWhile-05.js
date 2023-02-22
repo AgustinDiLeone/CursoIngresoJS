@@ -7,7 +7,7 @@ function mostrar()
 
 	sexoIngresado = prompt("ingrese 'f' para femenino ó 'm' para masculino .");
 	
-	while(!(sexoIngresado == "f" || sexoIngresado == "m" || sexoIngresado == "F" || sexoIngresado == "M")){
+	while(!isNaN(sexoIngresado) || !(sexoIngresado == "f" || sexoIngresado == "m" || sexoIngresado == "F" || sexoIngresado == "M")){
 
 		sexoIngresado = prompt("Error: ingrese 'f' para femenino ó 'm' para masculino .");
 	}
