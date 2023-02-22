@@ -11,7 +11,7 @@ function mostrar()
 
 		}
 
-	for(let i = 0; i < numeroIngresado; i++){
+	for(let i = 1; i < numeroIngresado; i++){
 				
 		if(numeroIngresado % i == 0){
 
