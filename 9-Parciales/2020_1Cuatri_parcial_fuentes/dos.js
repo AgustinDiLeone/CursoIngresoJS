@@ -19,18 +19,25 @@ function mostrar()
   let descuento;
   let precioBruto;
   let precioFinal;
-  let precioTotalFinal;
   let precioConjunto;
-  let cantidadMayor;
   let bolsaCara;
   let productoCaro;
-  let productoMayor;
+  let acumuladorCal;
+  let acumuladorCemento;
+  let acumuladorArena;
+  let mensajeUno;
+  let bandera;
+  let cantidadBolsas;
+  let mensaje;
 
   respuesta = "si";
   precioBruto = 0;
-  precioTotalFinal = 0;
-  cantidadMayor = 0;
   bolsaCara = 0;
+  acumuladorArena = 0;
+  acumuladorCal = 0;
+  acumuladorCemento = 0;
+  bandera = true;
+
 
 
   while(respuesta == "Si" || respuesta == "SI" || respuesta == "si" ){
@@ -46,40 +53,67 @@ function mostrar()
       while(isNaN(cantidad)){
         precio = parseFloat(prompt("Eror: Ingrese el precio del producto"));
       }
-      if(cantidad > 30){
-        descuento = 25
+      
+      switch(producto){
+        case"arena":
+          acumuladorArena = acumuladorArena + cantidad;
+          break;
 
-      }else if(cantidad > 10){
-          descuento = 15
+        case"cal":
+          acumuladorCal = acumuladorCal + cantidad;
+          break;
 
-      }else{
-        descuento = 0
-      }
-      precioConjunto = precio * cantidad;
-      precioBruto = precioBruto + precioConjunto;
-      precioFinal = precioConjunto - (precioConjunto * descuento / 100);
-      precioTotalFinal = precioTotalFinal + precioFinal;
-
-      if(cantidad > cantidadMayor){
-
-        cantidadMayor = cantidad;
-        productoMayor = producto;
+        case"cemento":
+          acumuladorCemento = acumuladorCemento + cantidad;
+          break;
 
       }
-      if(bolsaCara < precio){
+      if(bandera || bolsaCara < precio){
 
         bolsaCara = precio;
         productoCaro = producto;
+        bandera = false;
 
       }
+      precioConjunto = precio * cantidad;
+      precioBruto = precioBruto + precioConjunto;
+      
+    respuesta = prompt("deseas ingresar otro producto? SI/NO");
 
-
-      respuesta = prompt("deseas ingresar otro producto? SI/NO");
   }
 
-  console.log("El importe total sin descuento es: " + precioBruto);
-  console.log("El importe total con descuento es: " + precioTotalFinal);
-  console.log("El tipo con mas cantidad de bolsas es: " + productoMayor);
-  console.log("El tipo mas caro es: " + productoCaro);
+  cantidadBolsas = acumuladorArena + acumuladorCal + acumuladorCemento;
+  if(cantidadBolsas > 29){
+    descuento = -25
 
+  }else if(cantidadBolsas > 9){
+    descuento = -15
+
+  }else{
+    descuento = 0
+  }
+  
+  precioFinal = precioBruto + (precioBruto * descuento / 100);
+
+  if(acumuladorArena > acumuladorCal && acumuladorArena > acumuladorCemento){
+    mensajeUno = "la arena"
+  }else if(acumuladorCal > acumuladorCemento && acumuladorCal >= acumuladorArena){
+    mensajeUno = "la cal"
+  }else{
+    mensajeUno = "el cemento"
+  }
+
+  
+
+  if(descuento != 0){
+    mensaje = "El importe total con descuento es: " + precioFinal;
+  }else{
+    mensaje = "No se aplico descuento";
+  }
+  console.log("El importe total sin descuento es: " + precioBruto);
+  console.log(mensaje)
+  console.log("El tipo con mas cantidad de bolsas es " + mensajeUno);
+  console.log("El tipo mas caro es: " + productoCaro);
+  
 }
+

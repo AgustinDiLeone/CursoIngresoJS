@@ -22,17 +22,26 @@ function mostrar()
 	let fabricanteAlcoholBarato;
 	let precioAlcoholBarato;
 	let banderaCantidad;
-	let cantidadProducto;
-	let promedio;
-	let cantidadJabon;
+	let contadorAlcohol;
+	let acumuladorAlcohol;
+	let acumuladorJabon;
+	let contadorBarbijo;
+	let acumuladorBarbijo;
+	let contadorJabon;
+	let mensaje;
+	let promedioCompra;
 
 	banderaAlcohol = true;
 	cantidadAlcoholBarato = 0;
 	fabricanteAlcoholBarato = "No hay";
 	precioAlcoholBarato = 0;
 	banderaCantidad = true;
-	cantidadProducto = 0;
-	cantidadJabon  = 0;
+	contadorAlcohol = 0;
+	acumuladorJabon  = 0;
+	acumuladorBarbijo = 0;
+	contadorJabon = 0;
+	acumuladorAlcohol = 0;
+	contadorBarbijo = 0;
 
 	for(let i = 0; i < 5; i++){
 		producto = prompt("Ingrese un producto de prevención de contagio");
@@ -53,33 +62,46 @@ function mostrar()
 		marca = prompt("Ingrese la marca del producto");
 		fabricante = prompt("Ingrese el fabricante del producto");
 
-		if(banderaAlcohol && producto == "alcohol"){
-			precioAlcoholBarato = precio;
-			cantidadAlcoholBarato = cantidad;
-			fabricanteAlcoholBarato = fabricante;
-			banderaAlcohol = false;
-			
-		}else if(producto == "alcohol" && precio < precioAlcoholBarato){
-			precioAlcoholBarato = precio;
-			cantidadAlcoholBarato = cantidad;
-			fabricanteAlcoholBarato = fabricante;
-			
-		}
-		if(cantidadProducto < cantidad){
-			cantidadProducto = cantidad;
-			promedio = precio / cantidadProducto;
+		switch(producto){
+			case"alcohol":		
+				if(banderaAlcohol || precio < precioAlcoholBarato){
+					precioAlcoholBarato = precio;
+					cantidadAlcoholBarato = cantidad;
+					fabricanteAlcoholBarato = fabricante;
+					banderaAlcohol = false;
+					
+				}
+				contadorAlcohol = contadorAlcohol + 1;
+				acumuladorAlcohol = acumuladorAlcohol + cantidad;
+				break;
+		
+			case"barbijo":
+				contadorBarbijo = contadorBarbijo + 1;
+				acumuladorBarbijo = acumuladorBarbijo + cantidad;
+				break;
 
-		}
-		if(producto == "jabon"){
-
-			cantidadJabon = cantidadJabon + cantidad;
+			case"jabon":
+				contadorJabon = contadorJabon + 1;
+				acumuladorJabon = acumuladorJabon + cantidad;
+				break;
 		}
 
 		
 	}
 
+	if(acumuladorAlcohol > acumuladorJabon && acumuladorAlcohol > acumuladorBarbijo){
+		promedioCompra = acumuladorAlcohol/contadorAlcohol;
+		mensaje = " alcohol"
+	}else if(acumuladorJabon > acumuladorBarbijo && acumuladorBarbijo >= acumuladorAlcohol){
+		promedioCompra =  acumuladorJabon/contadorBarbijo;
+		mensaje = " jabon"
+	}else{
+		promedioCompra =  acumuladorBarbijo/contadorBarbijo;
+		mensaje = " barbijo"
+	}
+
 	console.log("El alcohol mas barato es: " + fabricanteAlcoholBarato + " comprando " + cantidadAlcoholBarato + " unidades");
-	console.log("El promedio de la compra con mayor unidades es: " + promedio);
-	console.log("Hay " + cantidadJabon + " unidades de jabon en total");
+	console.log("El tipo con mayor unidades es el" + mensaje + " y su promedio es " + promedioCompra);
+	console.log("Hay " + acumuladorJabon + " unidades de jabon en total");
 
 }
