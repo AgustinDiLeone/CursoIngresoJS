@@ -72,9 +72,10 @@ function mostrar()
 		if(numero >= 10 && numero <= 20){
 			cantidad = cantidad + 1;
 			promedio = promedio + numero
-			promedioFinal = promedio / cantidad
+			
 		}
 		
+		promedioFinal = promedio / cantidad
 		respuesta = prompt("deseas ingresar otro numero? SI/NO");
 	}
 
