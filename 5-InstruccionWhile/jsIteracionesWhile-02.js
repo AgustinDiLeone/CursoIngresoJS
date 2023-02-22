@@ -71,13 +71,15 @@ function mostrar()
 		}
 		if(numero >= 10 && numero <= 20){
 			cantidad = cantidad + 1;
-			promedio = promedio + numero
+			promedio = promedio + numero;
 			
 		}
-		
-		promedioFinal = promedio / cantidad
+
 		respuesta = prompt("deseas ingresar otro numero? SI/NO");
 	}
+
+	
+	promedioFinal = promedio / cantidad;
 
 	console.log("Ingresaste " + cantidad + " de numeros entre el 10 y el 20 ");
 	console.log("El promedio de los numeros entre el 10 y 20 es: " + promedioFinal);
