@@ -1,15 +1,19 @@
 /*
 Realizar el algoritmo que permita ingresar los datos de una compra de productos de la construccion, hasta que el cliente quiera:
-Tipo validad("arena";"cal";"cemento")
-Cantidad de bolsas,
-Precio por bolsa (más de cero ),
+ Tipo validad("arena";"cal";"cemento") 
+Cantidad de bolsas(0-300),
+Precio por bolsa (más de cero y menor a 10000 ),
 al terminar la compra el cliente accede a un descuento segun las bolsas en total
-Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
-Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
-a) El importe total a pagar , bruto sin descuento y...
-b) el importe total a pagar con descuento(solo si corresponde)
-d) Informar el tipo ("arena";"cal";"cemento") con mas cantidad de bolsas en el total de la compra.
-f) El tipo mas caro*/
+Si compro más de 15 bolsas en total tenes 10% de descuento sobre el total a pagar.
+            Si compro más de 45 bolsas en total tenes 30% de descuento sobre el total a pagar.
+                a)
+                El importe total a pagar , bruto sin descuento y...
+                b)
+                el importe total a pagar con descuento(solo si corresponde)
+                d)
+                Informar la bolsa mas cara de Cal y la mas barata de Cemento.
+                e)
+                Cuantas bolsas de arena se compraron en total, y el promedio por compra.*/
 
 function mostrar()
 {
@@ -21,14 +25,17 @@ function mostrar()
   let precioFinal;
   let precioTotal;
   let bolsaCara;
-  let productoCaro;
   let acumuladorCal;
   let acumuladorCemento;
   let acumuladorArena;
-  let mensajeUno;
-  let bandera;
+ // let mensajeUno;
+  let banderaCal;
   let cantidadBolsas;
   let mensaje;
+  let bolsaBarata;
+  let banderaCemento;
+  let contadorArenaPrecio;
+  let promedioArena;
 
   respuesta = "si";
   precioBruto = 0;
@@ -36,7 +43,11 @@ function mostrar()
   acumuladorArena = 0;
   acumuladorCal = 0;
   acumuladorCemento = 0;
-  bandera = true;
+  banderaCal = true;
+  banderaCemento = true;
+  bolsaBarata = 0;
+  contadorArenaPrecio = 0;
+ 
 
 
 
@@ -46,35 +57,38 @@ function mostrar()
         producto = prompt("Error: Ingrese un producto de construccion");
       }
     cantidad = parseInt(prompt("Ingrese la cantidad del producto"));
-      while(isNaN(cantidad) || cantidad < 1 || cantidad > 100000){
+      while(isNaN(cantidad) || cantidad < 0 || cantidad > 100000){
         cantidad = parseInt(prompt("Error: Ingrese la cantidad del producto"));
       }
     precio = parseFloat(prompt("Ingrese el precio del producto"));
-      while(isNaN(precio) || precio < 1 || precio > 10000000){
+      while(isNaN(precio) || precio < 0 || precio > 10000){
         precio = parseFloat(prompt("Eror: Ingrese el precio del producto"));
       }
       
       switch(producto){
         case"arena":
           acumuladorArena = acumuladorArena + cantidad;
+          contadorArenaPrecio = contadorArenaPrecio + precio;
           break;
 
         case"cal":
           acumuladorCal = acumuladorCal + cantidad;
+          if(banderaCal || bolsaCara < precio){
+            bolsaCara = precio;
+            banderaCal = false;
+    
+          }
           break;
 
         case"cemento":
           acumuladorCemento = acumuladorCemento + cantidad;
+          if(banderaCemento || bolsaBarata > precio){
+            bolsaBarata = precio;
+            banderaCemento = false;
           break;
-
+          }
       }
-      if(bandera || bolsaCara < precio){
-
-        bolsaCara = precio;
-        productoCaro = producto;
-        bandera = false;
-
-      }
+      
       precioTotal = precio * cantidad;
       precioBruto = precioBruto + precioTotal;
       
@@ -83,37 +97,40 @@ function mostrar()
   }
 
   cantidadBolsas = acumuladorArena + acumuladorCal + acumuladorCemento;
-  if(cantidadBolsas > 29){
-    descuento = -25
+  if(cantidadBolsas > 44){
+    descuento = -30
 
-  }else if(cantidadBolsas > 9){
-    descuento = -15
+  }else if(cantidadBolsas > 14){
+    descuento = -10
 
   }else{
     descuento = 0
   }
-  
   precioFinal = precioBruto + (precioBruto * descuento / 100);
 
+  /*
   if(acumuladorArena > acumuladorCal && acumuladorArena > acumuladorCemento){
     mensajeUno = "la arena"
   }else if(acumuladorCal > acumuladorCemento && acumuladorCal >= acumuladorArena){
     mensajeUno = "la cal"
   }else{
     mensajeUno = "el cemento"
-  }
+  }*/
+  promedioArena = contadorArenaPrecio / acumuladorArena ;
 
   
-
   if(descuento != 0){
     mensaje = "El importe total con descuento es: " + precioFinal;
   }else{
     mensaje = "No se aplico descuento";
   }
   console.log("El importe total sin descuento es: " + precioBruto);
-  console.log(mensaje)
-  console.log("El tipo con mas cantidad de bolsas es " + mensajeUno);
-  console.log("El tipo mas caro es: " + productoCaro);
+  console.log(mensaje);
+  console.log("La bolsa de cal mas cara cuesta " + bolsaCara);
+  console.log("La bolsa de cemento mas barata cuesta " + bolsaBarata);
+  //console.log("El tipo con mas cantidad de bolsas es " + mensajeUno);
+  console.log("La cantidad de bolsas de arena que se compraron fueron: " + acumuladorArena);
+  console.log("El promedio de compra es de: " + promedioArena );
   
 }
 
