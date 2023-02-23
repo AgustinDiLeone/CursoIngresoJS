@@ -19,7 +19,7 @@ function mostrar()
   let descuento;
   let precioBruto;
   let precioFinal;
-  let precioConjunto;
+  let precioTotal;
   let bolsaCara;
   let productoCaro;
   let acumuladorCal;
@@ -42,15 +42,15 @@ function mostrar()
 
   while(respuesta == "Si" || respuesta == "SI" || respuesta == "si" ){
     producto = prompt("Ingrese un producto de construccion");
-      while(!(producto == "arena" || producto == "cal" || producto == "cemento")){
+      while(producto != "arena" && producto != "cal" && producto != "cemento"){
         producto = prompt("Error: Ingrese un producto de construccion");
       }
     cantidad = parseInt(prompt("Ingrese la cantidad del producto"));
-      while(isNaN(cantidad)){
+      while(isNaN(cantidad) || cantidad < 1 || cantidad > 100000){
         cantidad = parseInt(prompt("Error: Ingrese la cantidad del producto"));
       }
     precio = parseFloat(prompt("Ingrese el precio del producto"));
-      while(isNaN(cantidad)){
+      while(isNaN(precio)|| precio < 1 || precio > 10000000){
         precio = parseFloat(prompt("Eror: Ingrese el precio del producto"));
       }
       
@@ -75,8 +75,8 @@ function mostrar()
         bandera = false;
 
       }
-      precioConjunto = precio * cantidad;
-      precioBruto = precioBruto + precioConjunto;
+      precioTotal = precio * cantidad;
+      precioBruto = precioBruto + precioTotal;
       
     respuesta = prompt("deseas ingresar otro producto? SI/NO");
 
