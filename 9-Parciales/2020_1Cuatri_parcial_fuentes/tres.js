@@ -104,17 +104,12 @@ function mostrar()
 	let estadoCivil;
 	let temperaturaCorporal;
 	let respuesta;
-
 	let banderaTemperatura;
 	let temperaturaMayor;
 	let PersonaCaliente;
-
 	let contadorViudos;
-
 	let contadorSolterosViudos;
-
 	let adultosCalientes;
-
 	let acumuladorSolteros;
 	let contadorSolteros;
 	let promedioSolteros;
