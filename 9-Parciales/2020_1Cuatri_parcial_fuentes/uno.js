@@ -183,7 +183,7 @@ function mostrar()
 
 	while(respuesta == "Si"){
 		tipoProducto = prompt("Ingrese un tipo de mercaderia (limpieza , comestible u otros)");
-			while(tipoProducto != "limpieza" && tipoProducto != "comestible" && tipoProducto != "otros"){
+			while(!isNaN(tipoProducto) && tipoProducto != "limpieza" && tipoProducto != "comestible" && tipoProducto != "otros"){
 
 				tipoProducto = prompt("Error: Ingrese un tipo de mercaderia (limpieza , comestible u otros)");
 			}
