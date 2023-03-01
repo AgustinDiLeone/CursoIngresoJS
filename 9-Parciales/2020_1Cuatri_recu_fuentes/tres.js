@@ -5,7 +5,7 @@ b) Cuantos mayores de edad( más de 17) estan solteros
 c) La cantidad de Mujeres que hay solteras o viudas.
 d) cuantas personas de la tercera edad( mas de 60 años) , tienen mas de 38 de temperatura
 e) El promedio de edad entre las mujeres casadas.*/
-
+/*
 function mostrar()
 {
 	let nombre;
@@ -104,4 +104,5 @@ function mostrar()
 	console.log("Hay " + contadorSolterasViudas + " mujeres solteras o viuds");
 	console.log("Hay " + adultosCalientes + " personas de la tercera edad con mas de 38 de temperatura corporal");
 	console.log("El promedio de edad de los hombres solteros es: " + promedioCasadas);
-}
+}*/
+
