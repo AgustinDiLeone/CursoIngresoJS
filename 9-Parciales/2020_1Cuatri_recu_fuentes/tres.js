@@ -106,3 +106,99 @@ function mostrar()
 	console.log("El promedio de edad de los hombres solteros es: " + promedioCasadas);
 }*/
 
+// Agustin Di Leone
+/*Recu 2020 3 bis: /*Vacaciones en Familia" 
+Nos ingresan una cantidad indeterminada de estadías de vacaciones, 
+validando los datos ingresados:
+nombre del pasajero titular, 
+destino( “Brasil”, “Caribe” o “Europa”), 
+temporada(“alta”,”baja”,“media”),
+cantidad de pasajeros que viajan.
+Informar:
+a)El destino más elegido.
+b)El nombre del pasajero titular que lleva menos pasajeros.
+c)El promedio de personas, que viajan en temporada alta.
+d)El total de personas que viajaron a Europa.
+*/
+
+function mostrar() 
+{
+	let nombrePasajero;
+    let cantidadPasajeros;
+    let destino;
+    let temporada;
+	let respuesta = "Si";
+	let contadorBrasil = 0;
+	let contadorCaribe = 0;
+	let contadorEuropa = 0;
+	let banderaMenosPasajeros = true;
+	let menosPasajeros;
+	let nombreMenosPasajeros;
+	let contadorTemporadaAlta = 0;
+	let acumuladorTemporadaAlta = 0;
+	let promedioTemporadaAlta;
+	let acumuladorEuropa = 0;
+
+
+    while(respuesta == "Si"){
+		nombrePasajero = prompt("Ingrese el nombre del titular");
+			while(!isNaN(nombrePasajero)){
+				nombrePasajero = prompt("Error: Ingrese el nombre del titular");
+			}
+		cantidadPasajeros = parseInt(prompt("Ingrese la cantidad de pasajeros que viajan"));
+			while(isNaN(cantidadPasajeros) || cantidadPasajeros < 1 || cantidadPasajeros > 1000){
+				cantidadPasajeros = parseInt(prompt("Error: Ingrese la cantidad de pasajeros que viajan"));
+			}
+		destino = prompt('Ingrese el destino( “Brasil”, “Caribe” o “Europa”)');
+			while(destino != "Brasil" && destino != "Caribe" && destino != "Europa"){
+				destino = prompt('Error: Ingrese el destino( “Brasil”, “Caribe” o “Europa”)');
+			}
+		temporada = prompt('Ingrese la temporada (“alta”,”baja”,“media”)');
+			while(temporada != "alta" && temporada != "baja" && temporada != "media"){
+				temporada = prompt('Error: Ingrese la temporada (“alta”,”baja”,“media”)');
+			}
+		switch(destino){
+			case"Brasil":
+				contadorBrasil = contadorBrasil + 1;
+				break;
+			case"Caribe":
+				contadorCaribe = contadorCaribe + 1;
+				break;
+			case"Europa":
+				contadorEuropa = contadorEuropa + 1;
+				acumuladorEuropa = acumuladorEuropa + cantidadPasajeros;
+				break;
+		}
+		if(banderaMenosPasajeros || menosPasajeros > cantidadPasajeros){
+			menosPasajeros = cantidadPasajeros;
+			banderaMenosPasajeros = false;
+			nombreMenosPasajeros = nombrePasajero;
+		}
+		if(temporada == "alta"){
+			contadorTemporadaAlta = contadorTemporadaAlta + 1;
+			acumuladorTemporadaAlta = acumuladorTemporadaAlta + cantidadPasajeros;
+		}
+
+        respuesta = prompt("Si deseas agregar otro pasajero ingrese 'Si'");
+    }
+	
+	if(contadorBrasil > contadorCaribe && contadorBrasil > contadorEuropa){
+		console.log("El destino mas elegido es Brasil");
+	}else if(contadorCaribe > contadorEuropa && contadorCaribe >= contadorBrasil){
+		console.log("El destino mas elegido es el Caribe");
+	}else{
+		console.log("El destino mas elegido es Europa");
+	}
+    console.log("El titular que lleva menos pasajeros es " + nombreMenosPasajeros);
+	if(contadorTemporadaAlta > 0){
+		promedioTemporadaAlta = acumuladorTemporadaAlta / contadorTemporadaAlta;
+		console.log("El promedio que viajan en temporada alta  es: " + promedioTemporadaAlta + " personas");
+	}else{
+		console.log("No hay viajes registrados en temporada alta");
+	}
+	if(contadorEuropa == 0){
+		console.log("No hay viajes registrados a Europa");
+	}else{
+		console.log("Se registraron " + acumuladorEuropa + " pasajeros con destino Europa");
+	}
+}
